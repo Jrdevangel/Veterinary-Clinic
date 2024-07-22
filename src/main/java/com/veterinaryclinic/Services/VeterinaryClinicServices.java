@@ -1,5 +1,5 @@
 package com.veterinaryclinic.Services;
 
-public class VeterinaryClinicService {
+public class VeterinaryClinicServices {
     
 }

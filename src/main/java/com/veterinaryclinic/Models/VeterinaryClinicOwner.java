@@ -9,17 +9,12 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "veterinaryclinic")
 
-public class VeterinaryClinicPatients {
+public class VeterinaryClinicOwner {
 
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column(name = "name")
-    private String name;
-    @Column(name = "age")
-    private String age;
-    @Column(name = "race")
-    private String race;
-    @Column(name = "genre")
-    private String genre;
-    @Column(name = "id")
-    private Long id;
+    @Column(name = "owner's name")
+    private String ownername;
+    @Column(name = "owner's number")
+    private String ownernumber;
+
 }
