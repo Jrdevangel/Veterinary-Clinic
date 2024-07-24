@@ -1,11 +1,8 @@
-package com.veterinaryclinic.Controllers;
-
-import com.veterinaryclinic.Models.VeterinaryClinicPatients;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import com.veterinaryclinic.Services.VeterinaryClinicServices;
-
-import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/")
@@ -17,12 +14,12 @@ public class VeterinaryClinicControllers {
         VeterinaryClinicServices veterinaryclinicServices;
 
         @GetMapping("/patients")
-        public ArrayList<VeterinaryClinicPatients> getAllPatients() {
-                return veterinaryclinicServices.getAllPatients();
+        public List<Patient> getAllPatients() {
+                return pacienteService.getAllPatients();
         }
 
         @GetMapping("/patients/{id}")
-        public VeterinaryClinicPatients getAllPatientsById(@PathVariable("id") Long id) {
-                return veterinaryclinicServices.getPatientsById(id);
+        public Optional<Patient> getAllPatientsById(@PathVariable Long id) {
+                return patientService.getPacienteById(id);
         }
 }
