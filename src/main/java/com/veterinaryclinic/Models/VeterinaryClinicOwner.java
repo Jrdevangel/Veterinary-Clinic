@@ -7,14 +7,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "veterinaryclinic")
+@Table(name = "veterinaryClinic")
 
 public class VeterinaryClinicOwner {
 
+
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "owner's name")
-    private String ownername;
+    private String ownerName;
     @Column(name = "owner's number")
-    private String ownernumber;
+    private String ownerNumber;
 
 }

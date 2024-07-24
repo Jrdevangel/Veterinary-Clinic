@@ -7,7 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "veterinaryclinic")
+@Table(name = "veterinaryClinic")
 
 public class VeterinaryClinicPatients {
 
