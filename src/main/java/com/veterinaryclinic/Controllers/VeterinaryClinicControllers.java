@@ -3,13 +3,7 @@ package com.veterinaryclinic.Controllers;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.veterinaryclinic.Models.VeterinaryClinicPatients;
 import com.veterinaryclinic.Services.VeterinaryClinicServices;
@@ -36,6 +30,15 @@ public class VeterinaryClinicControllers {
         @PostMapping(path = "/veterinary")
         public VeterinaryClinicPatients addPatients(@RequestBody VeterinaryClinicPatients newPatients) {
                 return veterinaryclinicServices.savePatients(newPatients);
+
+                @PutMapping("/patients/{id}")
+                public VeterinaryClinicPatients updatePatients(@PathVariable Long id, @RequestBody Patients patientsDetails) {
+                        return veterinaryclinicServices.updatePatients(id, patientsDetails);
+
+
+                }
+
+
 
 }
 
