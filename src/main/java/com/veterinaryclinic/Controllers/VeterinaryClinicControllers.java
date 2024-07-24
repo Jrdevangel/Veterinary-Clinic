@@ -16,6 +16,10 @@ public class VeterinaryClinicControllers {
         @Autowired
         VeterinaryClinicServices veterinaryclinicServices;
 
+        @GetMapping("/patients")
+        public ArrayList<VeterinaryClinicPatients> getAllPatients() {
+                return veterinaryclinicServices.getAllPatients();
+        }
 
         @GetMapping("/patients/{id}")
         public VeterinaryClinicPatients getAllPatientsById(@PathVariable("id") Long id) {
