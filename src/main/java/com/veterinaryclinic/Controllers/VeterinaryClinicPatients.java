@@ -22,33 +22,33 @@ import com.veterinaryclinic.Services.VeterinaryClinicServices;
 public class VeterinaryClinicPatients {
 
         @Autowired
-        VeterinaryClinicPatients veterinaryclinicPatients;
+        VeterinaryClinicPatients veterinaryClinicPatients;
 
         @GetMapping("/patients")
         public ArrayList<VeterinaryClinicPatients> getAllPatients() {
-                return veterinaryclinicPatients.getAllPatients();
+                return veterinaryClinicPatients.getAllPatients();
         }
 
         @GetMapping("/patients/{id}")
         public VeterinaryClinicPatients getPatientsById(@PathVariable("id") Long id) {
-                return veterinaryclinicPatients.getPatientsById(id);
+                return veterinaryClinicPatients.getPatientsById(id);
         }
 
         @PostMapping(path = "/patients")
         public VeterinaryClinicPatients addPatients(@RequestBody VeterinaryClinicPatients newPatients) {
-                return veterinaryclinicPatients.addPatients(newPatients);
+                return veterinaryClinicPatients.addPatients(newPatients);
         }
 
         @PutMapping("/patients/{id}")
         public VeterinaryClinicPatients updatePatients(@RequestBody VeterinaryClinicPatients newPatients, @PathVariable Long id) {
                 newPatients.setId(id); 
-                return veterinaryclinicPatients.updatePatients(id);
+                return veterinaryClinicPatients.updatePatients(id);
 
         }
 
         @DeleteMapping("/patients/{id}")
         public VeterinaryClinicPatients deletePatients(@PathVariable Long id, @RequestBody VeterinaryClinicPatients patientsDetails) {
-                return veterinaryclinicPatients.deletePatients(id, patientsDetails);
+                return veterinaryClinicPatients.deletePatients(id);
 
         }
 
