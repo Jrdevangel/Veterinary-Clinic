@@ -12,7 +12,7 @@ import com.veterinaryclinic.Services.VeterinaryClinicServices;
 @RequestMapping("/")
 @CrossOrigin(origins = "*")
 
-public class VeterinaryClinicControllers {
+public class VeterinaryClinicPatients {
 
         @Autowired
         VeterinaryClinicServices veterinaryclinicServices;
@@ -39,8 +39,8 @@ public class VeterinaryClinicControllers {
 
         }
 
-        @DeleteMapping("/pacientes/{id}")
-        public VeterinaryClinicPatients deletePaciente(@PathVariable Long id,
+        @DeleteMapping("/patients/{id}")
+        public VeterinaryClinicPatients deletePatients(@PathVariable Long id,
                         @RequestBody VeterinaryClinicPatients patientsDetails) {
                 return veterinaryclinicServices.deletePatients(id, patientsDetails);
 
