@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "veterinaryclinic")
 
-public class VeterinaryClinicTreatment {
+public class VeterinaryClinicTreatments {
 
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "name")
