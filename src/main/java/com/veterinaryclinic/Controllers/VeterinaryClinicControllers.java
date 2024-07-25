@@ -30,16 +30,20 @@ public class VeterinaryClinicControllers {
         @PostMapping(path = "/veterinary")
         public VeterinaryClinicPatients addPatients(@RequestBody VeterinaryClinicPatients newPatients) {
                 return veterinaryclinicServices.savePatients(newPatients);
+        }
 
-                @PutMapping("/patients/{id}")
-                public VeterinaryClinicPatients updatePatients(@PathVariable Long id, @RequestBody Patients patientsDetails) {
-                        return veterinaryclinicServices.updatePatients(id, patientsDetails);
+        @PutMapping("/patients/{id}")
+        public VeterinaryClinicPatients updatePatients(@PathVariable Long id,
+                        @RequestBody VeterinaryClinicPatients patientsDetails) {
+                return veterinaryclinicServices.updatePatients(id, patientsDetails);
 
+        }
 
-                }
+        @DeleteMapping("/pacientes/{id}")
+        public VeterinaryClinicPatients deletePaciente(@PathVariable Long id,
+                        @RequestBody VeterinaryClinicPatients patientsDetails) {
+                return veterinaryclinicServices.deletePatients(id, patientsDetails);
 
-
-
-}
+        }
 
 }
