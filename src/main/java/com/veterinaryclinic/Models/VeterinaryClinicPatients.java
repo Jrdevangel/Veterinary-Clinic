@@ -23,47 +23,47 @@ public class VeterinaryClinicPatients {
     @Column(name = "id")
     private Long id;
 
-    public void setName(String nameString) {
+    public void getName(String nameString) {
         this.name = nameString;
     }
 
-    public String getName() {
+    public String setName() {
         return name;
     
     }
 
-    public void setAge(String age) {
+    public void getAge(String age) {
         this.age = age;
     }
 
-    public String getAge() {
+    public String setAge() {
         return age;
     
     }
 
-    public void setRace(String race) {
+    public void getRace(String race) {
         this.race = race;
     }
 
-    public String getRace() {
+    public String setRace() {
         return race;
     
     }
 
-    public void setGenre(String genre) {
+    public void getGenre(String genre) {
         this.genre = genre;
     }
 
-    public String getGenre() {
+    public String setGenre() {
         return genre;
     
     }
 
-    public void setId(Long id) {
+    public void getId(Long id) {
         this.id = id;
     }
 
-    public long getId() {
+    public Long setId() {
         return id;
     
     }
