@@ -16,5 +16,25 @@ public class VeterinaryClinicOwner {
     private String ownername;
     @Column(name = "owner's number")
     private String ownernumber;
+    @Column(name = "id")
+    private Long id;
+
+    public void setOwnerName(String ownerNameString) {
+        this.ownername = ownerNameString;
+    }
+
+    public String getOwnerName() {
+        return ownername;
+
+    }
+
+    public void setOwnerNumber(String ownerNumberString) {
+        this.ownername = ownerNumberString;
+    }
+
+    public String getOwnerNumber() {
+        return ownernumber;
+
+    }
 
 }
