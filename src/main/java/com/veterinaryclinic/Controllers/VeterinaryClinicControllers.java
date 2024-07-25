@@ -1,11 +1,12 @@
 package com.veterinaryclinic.Controllers;
 
-import com.veterinaryclinic.Models.VeterinaryClinicPatients;
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.veterinaryclinic.Services.VeterinaryClinicServices;
 
-import java.util.ArrayList;
+import com.veterinaryclinic.Models.VeterinaryClinicPatients;
+import com.veterinaryclinic.Services.VeterinaryClinicServices;
 
 @RestController
 @RequestMapping("/")
@@ -23,6 +24,26 @@ public class VeterinaryClinicControllers {
 
         @GetMapping("/patients/{id}")
         public VeterinaryClinicPatients getAllPatientsById(@PathVariable("id") Long id) {
-                return veterinaryclinicServices.getPatiensById(id);
+                return veterinaryclinicServices.getPatientsById(id);
         }
+
+        @PostMapping(path = "/veterinary")
+        public VeterinaryClinicPatients addPatients(@RequestBody VeterinaryClinicPatients newPatients) {
+                return veterinaryclinicServices.savePatients(newPatients);
+        }
+
+        @PutMapping("/patients/{id}")
+        public VeterinaryClinicPatients updatePatients(@PathVariable Long id,
+                        @RequestBody VeterinaryClinicPatients patientsDetails) {
+                return veterinaryclinicServices.updatePatients(id, patientsDetails);
+
+        }
+
+        @DeleteMapping("/pacientes/{id}")
+        public VeterinaryClinicPatients deletePaciente(@PathVariable Long id,
+                        @RequestBody VeterinaryClinicPatients patientsDetails) {
+                return veterinaryclinicServices.deletePatients(id, patientsDetails);
+
+        }
+
 }
