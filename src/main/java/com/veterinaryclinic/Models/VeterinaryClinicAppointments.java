@@ -1,5 +1,5 @@
 package com.veterinaryclinic.Models;
 
-public class VeterinaryClinicDates {
+public class VeterinaryClinicAppointments {
     
 }

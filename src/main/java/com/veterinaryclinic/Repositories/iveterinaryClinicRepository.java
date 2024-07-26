@@ -6,4 +6,3 @@ import com.veterinaryclinic.Models.VeterinaryClinicPatients;
 public interface iveterinaryClinicRepository extends JpaRepository<VeterinaryClinicPatients, Long>  {
     
 }
-

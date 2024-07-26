@@ -34,7 +34,7 @@ public class VeterinaryClinicAppointments {
 
         @PutMapping("/appointments/{id}")
         public VeterinaryClinicAppointments updateAppointments(@RequestBody VeterinaryClinicAppointments newAppointments, @PathVariable Long id) {
-                return veterinaryClinicAppointments.updateAppointments(id);
+                return veterinaryClinicAppointments.updateAppointments(newAppointments, id);
 
         }
 
