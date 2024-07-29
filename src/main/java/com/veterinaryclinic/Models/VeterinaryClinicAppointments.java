@@ -85,8 +85,8 @@ public class VeterinaryClinicAppointments {
 
     }
 
-    public void setPendingAppointments(String pendingappointmentString) {
-        this.pendingappointments = pendingappointmentString;
+    public void setPendingAppointments(String pendingappointments) {
+        this.pendingappointments = pendingappointments;
     }
 
     public String getPendingAppointments() {
