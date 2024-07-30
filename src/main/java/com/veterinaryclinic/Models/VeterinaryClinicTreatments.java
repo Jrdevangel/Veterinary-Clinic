@@ -5,44 +5,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "veterinaryclinic")
 
 public class VeterinaryClinicTreatments {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "name")
-    private String name;
-    @Column(name = "type")
-    private String type;
-    @Column(name = "id")
     private Long id;
 
-    public void setName(String nameString) {
-        this.name = nameString;
-    }
+    @Column(name = "name")
+    private String name; 
 
-    public String getName() {
-        return name;
+    @Column(name = "type")
+    private String type;
 
-    }
-
-    public void setType(String typeString) {
-        this.type = typeString;
-    }
-
-    public String getType() {
-        return type;
-
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-
-    }
 }

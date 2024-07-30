@@ -4,46 +4,25 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "veterinaryclinic")
 
 public class VeterinaryClinicOwner {
 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "owner's name")
-    private String ownername;
-    @Column(name = "owner's number")
-    private String ownernumber;
-    @Column(name = "id")
     private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column(name = "owner's name")
+    private String ownername; 
 
-    public Long getId() {
-        return id;
-
-    }
-
-    public void setOwnerName(String ownerNameString) {
-        this.ownername = ownerNameString;
-    }
-
-    public String getOwnerName() {
-        return ownername;
-
-    }
-
-    public void setOwnerNumber(String ownerNumberString) {
-        this.ownername = ownerNumberString;
-    }
-
-    public String getOwnerNumber() {
-        return ownernumber;
-
-    }
-
+    @Column(name = "owner's number")
+    private String ownernumber;
 }
