@@ -17,35 +17,35 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 @CrossOrigin(origins = "*")
 
-public class VeterinaryClinicPatients {
+public class PatientsController {
 
         @Autowired
-        VeterinaryClinicPatients veterinaryClinicPatients;
+        PatientsController veterinaryClinicPatients;
 
         @GetMapping("/patients")
-        public ArrayList<VeterinaryClinicPatients> getAllPatients() {
+        public ArrayList<PatientsController> getAllPatients() {
                 return veterinaryClinicPatients.getAllPatients();
         }
 
         @GetMapping("/patients/{id}")
-        public VeterinaryClinicPatients getPatientsById(@PathVariable("id") Long id) {
+        public PatientsController getPatientsById(@PathVariable("id") Long id) {
                 return veterinaryClinicPatients.getPatientsById(id);
         }
 
         @PostMapping(path = "/patients")
-        public VeterinaryClinicPatients addPatients(@RequestBody VeterinaryClinicPatients newPatients) {
+        public PatientsController addPatients(@RequestBody PatientsController newPatients) {
                 return veterinaryClinicPatients.addPatients(newPatients);
         }
 
         @PutMapping("/patients/{id}")
-        public VeterinaryClinicPatients updatePatients(@RequestBody VeterinaryClinicPatients newPatients,
+        public PatientsController updatePatients(@RequestBody PatientsController newPatients,
                         @PathVariable Long id) {
                 return veterinaryClinicPatients.updatePatients(newPatients, id);
 
         }
 
         @DeleteMapping("/patients/{id}")
-        public VeterinaryClinicPatients deletePatients(@PathVariable Long id) {
+        public PatientsController deletePatients(@PathVariable Long id) {
                 return veterinaryClinicPatients.deletePatients(id);
 
         }

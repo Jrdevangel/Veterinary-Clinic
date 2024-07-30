@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.veterinaryclinic.Models.Appoinment;
+import com.veterinaryclinic.Models.Appointment;
 import com.veterinaryclinic.Services.AppointmentService;
 
 @RestController
@@ -26,31 +26,30 @@ public class AppoimentController {
         AppointmentService appointmentService;
 
         @GetMapping("/appointments")
-        public List<Appoinment> getAllAppoinments() {
+        public List<Appointment> getAllAppointments() {
                 return appointmentService.getAllAppointments();
         }
 
         @GetMapping("/appointments/{id}")
-        public List<Appoinment> getAppointmentsById() {
-                return appointmentService.getAppointmentById();
+        public List<Appointment> getAppointmentsById() {
+                return appointmentService.getAppointmentsById();
         }
 
         @PostMapping(path = "/appointments")
-        public void seethelistofAppointments(@RequestBody AppoimentController newAppointments) {
-                veterinaryClinicAppointments.seethelistofAppointments(newAppointments);
+        public void saveAppointments(@RequestBody AppoimentController newAppointments) {
+                return appointmentService.saveAppointments(newAppointments);
 
         }
 
         @PutMapping("/appointments/{id}")
-        public AppoimentController updateAppointments(@RequestBody AppoimentController newAppointments,
-                        @PathVariable Long id) {
-                return veterinaryClinicAppointments.updateAppointments(newAppointments, id);
+        public void updateAppointments(@RequestBody AppoimentController newAppointments, @PathVariable Long id) {
+                return appointmentService.updateAppointments(newAppointments, id);
 
         }
 
         @DeleteMapping("/appointments/{id}")
-        public AppoimentController deleteAppointments(@PathVariable("id") Long id) {
-                return veterinaryClinicAppointments.deleteAppointments(id);
+        public void deleteAppointments(@PathVariable("id") Long id) {
+                return appointmentService.deleteAppointments(id);
 
         }
 
