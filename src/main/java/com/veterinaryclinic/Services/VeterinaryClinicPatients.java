@@ -10,5 +10,5 @@ public class VeterinaryClinicPatients {
 
     @Autowired
     IveterinaryClinicPatientsRepository veterinaryClinicPatientsRepository;
-    
+
 }

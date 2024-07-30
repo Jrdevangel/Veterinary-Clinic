@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 public class VeterinaryClinicTreatments {
 
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "name")
     private String name;
     @Column(name = "type")
@@ -25,7 +25,7 @@ public class VeterinaryClinicTreatments {
 
     public String getName() {
         return name;
-    
+
     }
 
     public void setType(String typeString) {
@@ -34,7 +34,7 @@ public class VeterinaryClinicTreatments {
 
     public String getType() {
         return type;
-    
+
     }
 
     public void setId(Long id) {
@@ -43,6 +43,6 @@ public class VeterinaryClinicTreatments {
 
     public Long getId() {
         return id;
-    
+
     }
 }

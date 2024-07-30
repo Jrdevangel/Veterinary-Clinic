@@ -38,7 +38,8 @@ public class VeterinaryClinicPatients {
         }
 
         @PutMapping("/patients/{id}")
-        public VeterinaryClinicPatients updatePatients(@RequestBody VeterinaryClinicPatients newPatients, @PathVariable Long id) {
+        public VeterinaryClinicPatients updatePatients(@RequestBody VeterinaryClinicPatients newPatients,
+                        @PathVariable Long id) {
                 return veterinaryClinicPatients.updatePatients(newPatients, id);
 
         }
@@ -48,5 +49,5 @@ public class VeterinaryClinicPatients {
                 return veterinaryClinicPatients.deletePatients(id);
 
         }
-    
+
 }

@@ -1,6 +1,6 @@
 package com.veterinaryclinic.Controllers;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,35 +13,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.veterinaryclinic.Models.Appoinment;
+import com.veterinaryclinic.Services.AppointmentService;
+
 @RestController
 @RequestMapping("/")
 @CrossOrigin(origins = "*")
 
-public class VeterinaryClinicAppointments {
+public class AppoimentController {
 
         @Autowired
-        VeterinaryClinicAppointments veterinaryClinicAppointments;
+        AppointmentService appointmentService;
 
         @GetMapping("/appointments")
-        public ArrayList<VeterinaryClinicAppointments> manageAppointments() {
-                return veterinaryClinicAppointments.manageAppointments();
+        public List<Appoinment> getALL() {
+                return appointmentService.getAllAppointments();
         }
 
         @PostMapping(path = "/appointments")
-        public VeterinaryClinicAppointments seethelistofAppointments(@RequestBody VeterinaryClinicAppointments newAppointments) {
-                return veterinaryClinicAppointments.seethelistofAppointments(newAppointments);
+        public void seethelistofAppointments(@RequestBody AppoimentController newAppointments) {
+                veterinaryClinicAppointments.seethelistofAppointments(newAppointments);
+
         }
 
         @PutMapping("/appointments/{id}")
-        public VeterinaryClinicAppointments updateAppointments(@RequestBody VeterinaryClinicAppointments newAppointments, @PathVariable Long id) {
+        public AppoimentController updateAppointments(@RequestBody AppoimentController newAppointments,
+                        @PathVariable Long id) {
                 return veterinaryClinicAppointments.updateAppointments(newAppointments, id);
 
         }
 
         @DeleteMapping("/appointments/{id}")
-        public VeterinaryClinicAppointments deleteAppointments(@PathVariable("id") Long id) {
+        public AppoimentController deleteAppointments(@PathVariable("id") Long id) {
                 return veterinaryClinicAppointments.deleteAppointments(id);
 
         }
-       
+
 }

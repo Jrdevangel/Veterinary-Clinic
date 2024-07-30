@@ -4,14 +4,16 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "veterinaryclinic")
 
-public class VeterinaryClinicPatients {
+public class Patient {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "name")
     private String name;
     @Column(name = "age")
@@ -29,7 +31,7 @@ public class VeterinaryClinicPatients {
 
     public String setName() {
         return name;
-    
+
     }
 
     public void getAge(String age) {
@@ -38,7 +40,7 @@ public class VeterinaryClinicPatients {
 
     public String setAge() {
         return age;
-    
+
     }
 
     public void getRace(String race) {
@@ -47,7 +49,7 @@ public class VeterinaryClinicPatients {
 
     public String setRace() {
         return race;
-    
+
     }
 
     public void getGenre(String genre) {
@@ -56,7 +58,7 @@ public class VeterinaryClinicPatients {
 
     public String setGenre() {
         return genre;
-    
+
     }
 
     public void getId(Long id) {
@@ -65,7 +67,7 @@ public class VeterinaryClinicPatients {
 
     public Long setId() {
         return id;
-    
+
     }
 
 }

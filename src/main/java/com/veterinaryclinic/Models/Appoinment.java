@@ -4,14 +4,17 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "veterinaryclinic")
 
-public class VeterinaryClinicAppointments {
-
+public class Appoinment {
+^
+    @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
+    private long idAppoiment;
     @Column(name = "date of appointment")
     private String date;
     @Column(name = "appointment time")
@@ -46,7 +49,6 @@ public class VeterinaryClinicAppointments {
 
     public String getTime() {
         return time;
-
     }
 
     public void setPatient(String patient) {
