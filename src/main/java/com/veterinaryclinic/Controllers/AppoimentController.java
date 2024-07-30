@@ -26,8 +26,13 @@ public class AppoimentController {
         AppointmentService appointmentService;
 
         @GetMapping("/appointments")
-        public List<Appoinment> getALL() {
+        public List<Appoinment> getAllAppoinments() {
                 return appointmentService.getAllAppointments();
+        }
+
+        @GetMapping("/appointments/{id}")
+        public List<Appoinment> getAppointmentsById() {
+                return appointmentService.getAppointmentById();
         }
 
         @PostMapping(path = "/appointments")
