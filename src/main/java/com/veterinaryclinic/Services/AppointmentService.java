@@ -10,26 +10,26 @@ import com.veterinaryclinic.Repositories.IAppointmentRepository;
 public class AppointmentService {
 
     @Autowired
-    IAppointmentRepository iAppoimentRepository;
+    IAppointmentRepository iappointmentRepository;
 
     public ArrayList<AppointmentController> getAllAppointments() {
-        return iAppoimentRepository.getAllAppointments();
+        return iappointmentRepository.getAllAppointments();
     }
 
     public ArrayList<AppointmentController> getAppointmentsById() {
-        return iAppoimentRepository.getAppointmentsById();
+        return iappointmentRepository.getAppointmentsById();
     }
 
     public ArrayList<AppointmentController> saveAppointments() {
-        return iAppoimentRepository.saveAppointments();
+        return iappointmentRepository.saveAppointments();
     }
 
     public ArrayList<AppointmentController> updateAppointments() {
-        return iAppoimentRepository.updateAppointments();
+        return iappointmentRepository.updateAppointments();
     }
 
     public ArrayList<AppointmentController> deleteAppointments() {
-        return iAppoimentRepository.deleteAppointments();
+        return iappointmentRepository.deleteAppointments();
     }
-    
+
 }
