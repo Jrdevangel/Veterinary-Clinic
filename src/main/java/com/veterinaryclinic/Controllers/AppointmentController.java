@@ -1,8 +1,9 @@
 package com.veterinaryclinic.Controllers;
 
+import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.veterinaryclinic.Models.Appointment;
 import com.veterinaryclinic.Services.AppointmentService;
 
@@ -20,30 +20,30 @@ import com.veterinaryclinic.Services.AppointmentService;
 @RequestMapping("/")
 @CrossOrigin(origins = "*")
 
-public class AppoimentController {
+public class AppointmentController {
 
         @Autowired
         AppointmentService appointmentService;
 
         @GetMapping("/appointments")
-        public List<Appointment> getAllAppointments() {
+        public ArrayList<Appointment> getAllAppointments() {
                 return appointmentService.getAllAppointments();
         }
 
         @GetMapping("/appointments/{id}")
-        public List<Appointment> getAppointmentsById() {
+        public ArrayList<Appointment> getAppointmentsById() {
                 return appointmentService.getAppointmentsById();
         }
 
         @PostMapping(path = "/appointments")
-        public void saveAppointments(@RequestBody AppoimentController newAppointments) {
+        public void saveAppointments(@RequestBody AppointmentController newAppointments) {
                 return appointmentService.saveAppointments(newAppointments);
 
         }
 
         @PutMapping("/appointments/{id}")
-        public void updateAppointments(@RequestBody AppoimentController newAppointments, @PathVariable Long id) {
-                return appointmentService.updateAppointments(newAppointments, id);
+        public void updateAppointments(@RequestBody AppointmentController newAppointments, @PathVariable Long id) {
+                return appointmentService.updateAppointments(id);
 
         }
 

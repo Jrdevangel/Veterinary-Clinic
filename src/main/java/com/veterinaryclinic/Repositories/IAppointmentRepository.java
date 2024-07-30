@@ -1,8 +1,8 @@
 package com.veterinaryclinic.Repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.veterinaryclinic.Controllers.AppoimentController;
+import com.veterinaryclinic.Controllers.AppointmentController;
 
-public interface IAppoimentRepository extends JpaRepository<AppoimentController, Long> {
+public interface IAppointmentRepository extends JpaRepository<AppointmentController, Long> {
 
 }
