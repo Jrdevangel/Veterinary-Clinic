@@ -24,7 +24,7 @@ public class VeterinaryClinicAppointments {
     }
 
     public VeterinaryClinicAppointments updateAppointment(Long id, VeterinaryClinicAppointments updatedAppointments) {
-            return veterinaryClinicAppointmentsRepository.update(id);
+        return veterinaryClinicAppointmentsRepository.update(id);
     }
 
     public void deleteAppointment(Long id) {

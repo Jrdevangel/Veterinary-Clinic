@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 public class VeterinaryClinicOwner {
 
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "owner's name")
     private String ownername;
     @Column(name = "owner's number")
