@@ -1,9 +1,8 @@
 package com.veterinaryclinic.Controllers;
 
-import java.util.ArrayList;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,44 +12,40 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.veterinaryclinic.Models.Appointment;
 import com.veterinaryclinic.Services.AppointmentService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/appointments")
 @CrossOrigin(origins = "*")
-
 public class AppointmentController {
 
         @Autowired
         AppointmentService appointmentService;
 
-        @GetMapping("/appointments")
-        public ArrayList<Appointment> getAllAppointments() {
+        @GetMapping("/appointment/")
+        public List<Appointment> getAllAppointments() {
                 return appointmentService.getAllAppointments();
         }
 
-        @GetMapping("/appointments/{id}")
-        public ArrayList<Appointment> getAppointmentsById() {
-                return appointmentService.getAppointmentsById();
+        @GetMapping("/appointment/{id}")
+        public Appointment getAppointmentById(@PathVariable Long id) {
+                return appointmentService.getAppointmentById(id);
         }
 
-        @PostMapping(path = "/appointments")
-        public void saveAppointments(@RequestBody AppointmentController newAppointments) {
-                return appointmentService.saveAppointments(newAppointments);
-
+        @PostMapping("/appointment/")
+        public Appointment saveAppointment(@RequestBody Appointment appointment) {
+                return appointmentService.saveAppointment(appointment);
         }
 
-        @PutMapping("/appointments/{id}")
-        public void updateAppointments(@RequestBody AppointmentController newAppointments, @PathVariable Long id) {
-                return appointmentService.updateAppointments(id);
-
+        @PutMapping(path = "/appointment/{id}")
+        public Appointment updateAppointment(@PathVariable Long id, @RequestBody Appointment updatedAppointment) {
+                return appointmentService.updateAppointment(id, updatedAppointment);
         }
 
-        @DeleteMapping("/appointments/{id}")
-        public void deleteAppointments(@PathVariable("id") Long id) {
-                return appointmentService.deleteAppointments(id);
-
+        @DeleteMapping("/appointment/{id}")
+        public String deleteAppointment(@PathVariable Long id) {
+                return appointmentService.deleteAppointment(id);
         }
-
 }

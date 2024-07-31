@@ -1,6 +1,6 @@
 package com.veterinaryclinic.Controllers;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,41 +13,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/")
-@CrossOrigin(origins = "*")
+import com.veterinaryclinic.Models.Patient;
+import com.veterinaryclinic.Services.PatientsService;
 
+@RestController
+@RequestMapping("/patients")
+@CrossOrigin(origins = "*")
 public class PatientsController {
 
         @Autowired
-        PatientsController veterinaryClinicPatients;
+        PatientsService patientsService;
 
-        @GetMapping("/patients")
-        public ArrayList<PatientsController> getAllPatients() {
-                return veterinaryClinicPatients.getAllPatients();
+        @GetMapping("/appointment/")
+        public List<Patient> getAllPatients() {
+                return patientsService.getAllPatients();
         }
 
-        @GetMapping("/patients/{id}")
-        public PatientsController getPatientsById(@PathVariable("id") Long id) {
-                return veterinaryClinicPatients.getPatientsById(id);
+        @GetMapping("/appointment/{id}")
+        public Patient getPatientById(@PathVariable Long id) {
+                return patientsService.getPatientById(id);
         }
 
-        @PostMapping(path = "/patients")
-        public PatientsController addPatients(@RequestBody PatientsController newPatients) {
-                return veterinaryClinicPatients.addPatients(newPatients);
+        @PostMapping(path = "/appointment/")
+        public Patient savePatient(@RequestBody Patient patient) {
+                return patientsService.savePatient(patient);
         }
 
-        @PutMapping("/patients/{id}")
-        public PatientsController updatePatients(@RequestBody PatientsController newPatients,
-                        @PathVariable Long id) {
-                return veterinaryClinicPatients.updatePatients(newPatients, id);
-
+        @PutMapping("/appointment/{id}")
+        public Patient updatePatient(@PathVariable Long id, @RequestBody Patient updatedPatient) {
+                return patientsService.updatePatient(id, updatedPatient);
         }
 
-        @DeleteMapping("/patients/{id}")
-        public PatientsController deletePatients(@PathVariable Long id) {
-                return veterinaryClinicPatients.deletePatients(id);
-
+        @DeleteMapping("/appointment/{id}")
+        public String deletePatient(@PathVariable Long id) {
+                return patientsService.deletePatient(id);
         }
-
 }

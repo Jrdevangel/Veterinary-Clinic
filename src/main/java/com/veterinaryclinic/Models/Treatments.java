@@ -12,17 +12,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "veterinaryclinic")
-
-public class VeterinaryClinicOwner {
+@Table(name = "treatments")
+public class Treatments {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "owner's name")
-    private String ownername; 
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "owner's number")
-    private String ownernumber;
+    @Column(name = "type")
+    private String type;
 }

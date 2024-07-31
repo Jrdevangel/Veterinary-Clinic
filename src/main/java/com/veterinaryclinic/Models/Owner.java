@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,17 +12,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "veterinaryclinic")
+@Table(name = "clinic_owners")
+public class Owner {
 
-public class VeterinaryClinicTreatments {
-
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    private String name; 
+    @Column(name = "owner_name")
+    private String ownerName;
 
-    @Column(name = "type")
-    private String type;
-
+    @Column(name = "owner_number")
+    private String ownerNumber;
 }

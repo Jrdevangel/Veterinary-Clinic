@@ -12,8 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "veterinaryclinic")
-
+@Table(name = "patients")
 public class Patient {
 
     @Id
@@ -28,8 +27,7 @@ public class Patient {
 
     @Column(name = "race")
     private String race;
-    
+
     @Column(name = "genre")
     private String genre;
-
 }

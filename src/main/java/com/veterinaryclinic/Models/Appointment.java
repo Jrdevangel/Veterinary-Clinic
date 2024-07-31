@@ -15,30 +15,28 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "veterinaryclinic")
-
+@Table(name = "appointments")
 public class Appointment {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "Date")
+    @Column(name = "date")
     private LocalDate date;
 
-    @Column(name = "Time")
+    @Column(name = "time")
     private LocalTime time;
 
-    @Column(name = "Emergency consultation")
+    @Column(name = "emergency")
     private boolean emergency;
 
-    @Column(name = "Reason for appointment")
-    private String reason;  
+    @Column(name = "reason")
+    private String reason;
 
-    @Column(name = "Appointment status")
+    @Column(name = "status")
     private boolean past;
-  
+
     @Column(name = "treatment")
     private String treatment;
-
 }

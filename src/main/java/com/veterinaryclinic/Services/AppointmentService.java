@@ -1,35 +1,49 @@
 package com.veterinaryclinic.Services;
 
-import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.veterinaryclinic.Controllers.AppointmentController;
+
+import com.veterinaryclinic.Models.Appointment;
 import com.veterinaryclinic.Repositories.IAppointmentRepository;
 
 @Service
 public class AppointmentService {
 
     @Autowired
-    IAppointmentRepository iappointmentRepository;
+    IAppointmentRepository iAppointmentRepository;
 
-    public ArrayList<AppointmentController> getAllAppointments() {
-        return iappointmentRepository.getAllAppointments();
+    public List<Appointment> getAllAppointments() {
+        return iAppointmentRepository.findAll();
     }
 
-    public ArrayList<AppointmentController> getAppointmentsById() {
-        return iappointmentRepository.getAppointmentsById();
+    public Appointment getAppointmentById(Long id) {
+        return iAppointmentRepository.findById(id).orElse(null);
     }
 
-    public ArrayList<AppointmentController> saveAppointments() {
-        return iappointmentRepository.saveAppointments();
+    public Appointment saveAppointment(Appointment appointment) {
+        return iAppointmentRepository.save(appointment);
     }
 
-    public ArrayList<AppointmentController> updateAppointments() {
-        return iappointmentRepository.updateAppointments();
+    public Appointment updateAppointment(Long id, Appointment updatedAppointment) {
+        if (iAppointmentRepository.existsById(id)) {
+            updatedAppointment.setId(id);
+            return iAppointmentRepository.save(updatedAppointment);
+        }
+        return null;
     }
 
-    public ArrayList<AppointmentController> deleteAppointments() {
-        return iappointmentRepository.deleteAppointments();
+    public String deleteAppointment(Long id) {
+        try {
+            if (iAppointmentRepository.existsById(id)) {
+                iAppointmentRepository.deleteById(id);
+                return "all ok";
+            } else {
+                return "appointment not found";
+            }
+        } catch (Exception e) {
+            return "error: " + e.getMessage();
+        }
     }
-
 }
