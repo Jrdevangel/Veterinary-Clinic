@@ -1,10 +1,8 @@
 package com.veterinaryclinic.Services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.veterinaryclinic.Models.Appointment;
 import com.veterinaryclinic.Repositories.IAppointmentRepository;
 
