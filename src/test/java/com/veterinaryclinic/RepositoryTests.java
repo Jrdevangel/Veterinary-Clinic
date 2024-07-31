@@ -17,7 +17,7 @@ import com.veterinaryclinic.Repositories.IAppointmentRepository;
 import com.veterinaryclinic.Repositories.IPatientsRepository;
 
 @DataJpaTest
-public class VeterinaryClinicRepositoryTests {
+public class RepositoryTests {
 
     @Autowired
     private IAppointmentRepository appointmentRepository;

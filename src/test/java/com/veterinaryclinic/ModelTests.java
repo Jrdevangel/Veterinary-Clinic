@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import com.veterinaryclinic.Models.Appointment;
 import com.veterinaryclinic.Models.Patient;
 
-public class VeterinaryClinicModelTests {
+public class ModelTests {
 
     @Test
     public void testAppointmentSettersAndGetters() {
