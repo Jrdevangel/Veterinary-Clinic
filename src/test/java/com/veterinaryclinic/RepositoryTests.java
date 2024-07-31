@@ -25,7 +25,7 @@ public class RepositoryTests {
     @Autowired
     private IPatientsRepository patientsRepository;
 
-    // Tests for IAppointmentRepository
+   
     @Test
     public void testFindByDate() {
         Appointment appointment = new Appointment();
@@ -37,7 +37,7 @@ public class RepositoryTests {
         assertFalse(appointments.isEmpty());
     }
 
-    // Tests for IPatientsRepository
+    
     @Test
     public void testFindById() {
         Patient patient = new Patient();
