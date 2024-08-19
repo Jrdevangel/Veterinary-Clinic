@@ -14,13 +14,11 @@ public class ModelTests {
 
     @Test
     public void testAppointmentSettersAndGetters() {
-       
+
         Appointment appointment = new Appointment();
 
-        
         appointment.setDate(LocalDate.of(2024, 1, 1));
 
-       
         LocalTime time = LocalTime.parse("10:00:00");
         appointment.setTime(time);
 
@@ -29,7 +27,6 @@ public class ModelTests {
         appointment.setPast(false);
         appointment.setTreatment("None");
 
-        
         assertEquals(LocalDate.of(2024, 1, 1), appointment.getDate());
         assertEquals(time, appointment.getTime());
         assertFalse(appointment.isEmergency());
@@ -40,20 +37,17 @@ public class ModelTests {
 
     @Test
     public void testPatientSettersAndGetters() {
-       
+
         Patient patient = new Patient();
 
-       
         patient.setName("Fluffy");
 
-        
         patient.setAge(String.valueOf(5));
         patient.setRace("Siamese");
         patient.setGenre("Female");
 
-       
         assertEquals("Fluffy", patient.getName());
-        assertEquals("5", patient.getAge()); 
+        assertEquals("5", patient.getAge());
         assertEquals("Siamese", patient.getRace());
         assertEquals("Female", patient.getGenre());
     }
