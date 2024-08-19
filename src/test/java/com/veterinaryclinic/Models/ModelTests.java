@@ -1,4 +1,4 @@
-package com.veterinaryclinic;
+package com.veterinaryclinic.Models;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -6,9 +6,6 @@ import java.time.LocalTime;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import org.junit.jupiter.api.Test;
-
-import com.veterinaryclinic.Models.Appointment;
-import com.veterinaryclinic.Models.Patient;
 
 public class ModelTests {
 

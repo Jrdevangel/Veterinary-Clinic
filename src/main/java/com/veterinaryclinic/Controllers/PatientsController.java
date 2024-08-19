@@ -1,6 +1,7 @@
 package com.veterinaryclinic.Controllers;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,27 +24,27 @@ public class PatientsController {
         @Autowired
         PatientsService patientsService;
 
-        @GetMapping("/appointment/")
+        @GetMapping("/")
         public List<Patient> getAllPatients() {
                 return patientsService.getAllPatients();
         }
 
-        @GetMapping("/appointment/{id}")
+        @GetMapping("/{id}")
         public Patient getPatientById(@PathVariable Long id) {
                 return patientsService.getPatientById(id);
         }
 
-        @PostMapping(path = "/appointment/")
+        @PostMapping("/")
         public Patient savePatient(@RequestBody Patient patient) {
                 return patientsService.savePatient(patient);
         }
 
-        @PutMapping("/appointment/{id}")
+        @PutMapping("/{id}")
         public Patient updatePatient(@PathVariable Long id, @RequestBody Patient updatedPatient) {
                 return patientsService.updatePatient(id, updatedPatient);
         }
 
-        @DeleteMapping("/appointment/{id}")
+        @DeleteMapping("/{id}")
         public String deletePatient(@PathVariable Long id) {
                 return patientsService.deletePatient(id);
         }
