@@ -37,7 +37,7 @@ public class AppointmentControllerTests {
 		MockitoAnnotations.openMocks(this);
 		mockMvc = MockMvcBuilders.standaloneSetup(appointmentController).build();
 	}
-
+	
 	@Test
 	public void testGetAllAppointments() throws Exception {
 		when(appointmentService.getAllAppointments()).thenReturn(Collections.singletonList(new Appointment()));
